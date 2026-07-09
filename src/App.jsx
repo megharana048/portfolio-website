@@ -126,15 +126,15 @@ function App() {
             <span>Full Stack • MERN Stack • In Progress</span>
           </div>
 
-          <a href={portfolioLink} target="_blank" rel="noreferrer" className="projectCard">
-            <h3>Portfolio Website</h3>
-            <p>
-              This responsive frontend portfolio website built using React and
-              Vite to showcase my skills, projects, contact details, and
-              developer journey.
-            </p>
-            <span>Frontend • React • Vite • This Website</span>
-          </a>
+          <div className="projectCard">
+  <h3>Portfolio Website</h3>
+  <p>
+    This responsive frontend portfolio website built using React and
+    Vite to showcase my skills, projects, contact details, and
+    developer journey.
+  </p>
+  <span>Frontend • React • Vite • You are viewing it</span>
+</div>
 
           <a href={netflixLink} target="_blank" rel="noreferrer" className="projectCard">
             <h3>Netflix Clone</h3>
@@ -198,3 +198,4 @@ function App() {
     </>
   );
 }
+export default App;
