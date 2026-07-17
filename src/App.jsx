@@ -97,22 +97,27 @@ const capabilities = [
 
 const projects = [
   {
-    title: "SkillHub LMS",
-    category: "Full-Stack Application",
-    description:
-      "A production-focused Learning Management System currently being developed with the MERN stack. The planned platform includes authentication, student and instructor dashboards, course management, enrolment, progress tracking and backend APIs.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-    ],
-    visualClass: "lmsVisual",
-    visualLabel: "SKILLHUB",
-    visualHeading: "Learn. Build. Grow.",
-    status: "Development in progress",
-  },
+  title: "SkillHub LMS",
+  category: "Full-Stack MERN Application",
+  description:
+    "A full-stack Learning Management System with role-based authentication, course browsing, enrollment, saved courses, progress tracking, instructor tools and admin management.",
+  technologies: [
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT",
+    "Tailwind CSS",
+  ],
+  visualClass: "lmsVisual",
+  visualLabel: "SKILLHUB",
+  visualHeading: "Learn. Build. Grow.",
+  status: "Live",
+  liveUrl:
+    "https://skillhub-lms-git-main-megha-rana.vercel.app",
+  githubUrl:
+    "https://github.com/megharana048/skillhub-lms",
+},
   {
     title: "Portfolio Website",
     category: "React Frontend",
@@ -553,19 +558,51 @@ function App() {
                     ))}
                   </div>
 
-                  {project.link ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="projectLink"
-                    >
-                      Open Project
-                      <span>↗</span>
-                    </a>
-                  ) : (
-                    <div className="projectStatus">{project.status}</div>
-                  )}
+                  {<div className="projectActions">
+  {project.liveUrl && (
+    <a
+      href={project.liveUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="projectLink projectLinkPrimary"
+    >
+      Live Demo
+      <span aria-hidden="true">↗</span>
+    </a>
+  )}
+
+  {project.githubUrl && (
+    <a
+      href={project.githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="projectLink projectLinkSecondary"
+    >
+      View Code
+      <span aria-hidden="true">↗</span>
+    </a>
+  )}
+
+  {!project.liveUrl && project.link && (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="projectLink"
+    >
+      Open Project
+      <span aria-hidden="true">↗</span>
+    </a>
+  )}
+
+  {!project.liveUrl &&
+    !project.githubUrl &&
+    !project.link && (
+      <div className="projectStatus">
+        {project.status}
+      </div>
+    )}
+</div>}
                 </div>
               </article>
             ))}

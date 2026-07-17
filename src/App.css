@@ -1975,3 +1975,50 @@ a {
     gap: 16px;
   }
 }
+.projectActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.projectPrimaryButton,
+.projectSecondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.projectPrimaryButton {
+  border: 1px solid #6366f1;
+  background: #6366f1;
+  color: #ffffff;
+}
+
+.projectPrimaryButton:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.projectSecondaryButton {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.projectSecondaryButton:hover {
+  border-color: #8b5cf6;
+  color: #c4b5fd;
+  transform: translateY(-2px);
+}
